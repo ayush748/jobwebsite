@@ -16,7 +16,12 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: [
+        "http://localhost:5173",
+        "https://frontend-beige-ten-19.vercel.app",
+        "https://frontend-ebftzggs7-ayush-tiwaris-projects-c5d86066.vercel.app",
+        process.env.FRONTEND_URL
+    ],
     credentials: true,
 }
 app.use(cors(corsOptions));
